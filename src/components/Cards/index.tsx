@@ -12,7 +12,7 @@ const initState: CardProps[] = [
   },
 ]
 const apiKey = import.meta.env.VITE_API_KEY
-const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}&`
+const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&`
 
 function Cards({ searchRequest }: { searchRequest: string | null }) {
   const [data, setData] = useState(initState)
