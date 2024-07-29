@@ -7,6 +7,8 @@ import { useApiUrl } from '@hks/index'
 const Details = () => {
   const { id } = useParams()
   const apiUrl = useApiUrl()
+
+  console.log('API URL', apiUrl)
   const [details, setDetails] = useState({} as DetailsType)
   const [loading, setLoading] = useState(true)
 
