@@ -11,8 +11,7 @@ import DefaultLayout from './layouts/DefaultLayout'
 
 
 
-const root = document.getElementById('root')! // Typescript also has a non-null assertion that you can use when you are sure that the value is never null by adding the ! operator to the end of your statement:
-
+const root = document.getElementById('root')! 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <BrowserRouter>

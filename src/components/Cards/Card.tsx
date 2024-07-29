@@ -1,27 +1,23 @@
 import { Link } from 'react-router-dom'
+import { CardType } from '@tps/index'
 
-export type CardProps = {
-  Title: string
-  Year: string
-  imdbID: string
-  Type: string
-  Poster: string
-}
-
-const Card = (item: CardProps) => {
+const Card = (item: CardType) => {
   return (
     <>
       <div className='card'>
-        <h3>{item.Title}</h3>
+        <div className='card__heading'>
+          <h3>
+            <Link to={`/details/${item.imdbID}`} className='card__link'>
+              {item.Title}
+            </Link>
+          </h3>
 
-        <p className='tags'>
-          <span className='tag'>{item.Year}</span>
-          <span className='tag'>{item.Type}</span>
-        </p>
+          <p className='tags'>
+            <span className='tag'>{item.Year}</span>
+            <span className='tag'>{item.Type}</span>
+          </p>
+        </div>
         <img src={item.Poster} alt={item.Title} />
-        <Link to={`/details/${item.imdbID}`} className='btn'>
-          Details
-        </Link>
       </div>
     </>
   )

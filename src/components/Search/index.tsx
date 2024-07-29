@@ -1,26 +1,22 @@
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent, useContext } from 'react'
+
+import { SearchContext } from '@lts/DefaultLayout'
 import './search.styl'
 
-const Search = ({ onDataChange }: { onDataChange:  (arg: string) => void 
-
-}) => {
-  const [data, setData] = useState('')
-
-  useEffect(() => {
-
-    return () => {
-      // onDataChange(data)
-    }
-  }, [data])
+const Search = () => {
+  const searchContextValue = useContext(SearchContext) || {
+    searchQuery: '',
+    setSearchQuery: () => {},
+  }
+  const { searchQuery, setSearchQuery } = searchContextValue
 
   const searchHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.target as HTMLFormElement
     const inp = form.firstElementChild as HTMLInputElement
-    // console.log(inp)
-    onDataChange(inp.value)
-    setData(inp.value)
-    localStorage.setItem('search', inp.value)
+
+    setSearchQuery(inp.value)
+    localStorage.setItem('search', searchQuery || inp.value)
   }
 
   return (

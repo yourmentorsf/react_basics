@@ -1,47 +1,42 @@
 import { useEffect, useState } from 'react'
-import Card, { CardProps } from './Card'
+import Card from './Card'
+import { CardType } from '@tps/index'
+import { useApiUrl } from '@hks/index'
 import './cards.styl'
 
-const initState: CardProps[] = [
-  {
-    Title: 'Title',
-    Year: 'Year',
-    imdbID: 'imdbID',
-    Type: 'Type',
-    Poster: 'Poster',
-  },
-]
-const apiKey = import.meta.env.VITE_API_KEY
-const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&`
-
-function Cards({ searchRequest }: { searchRequest: string | null }) {
-  const [data, setData] = useState(initState)
+function Cards({ searchRequest }: { searchRequest: string }) {
+  const apiUrl = useApiUrl()
+  const [data, setData] = useState(Array<CardType>())
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+  console.log('Search request', searchRequest)
 
-  
-  
-  const getData = () =>
-  fetch(`${apiUrl}s=${searchRequest}`)
-  .then(response => response.json())
-
-  .then(data => {
-    setData(data.Search)
-    setLoading(false)
-  })
-  
   useEffect(() => {
-    getData()
-  }, [searchRequest])
+    fetch(`${apiUrl}&s=${searchRequest}`)
+      .then(response => response.json())
 
+      .then(data => {
+        console.log('Data', data)
+        if (data.Error) {
+          setError(data.Error)
+          setLoading(false)
+          return
+        }
+        setData(data.Search)
+        setLoading(false)
+      })
+      .catch(err => console.log('Error', err))
+  }, [apiUrl, searchRequest])
 
   return (
     <div className='card-block'>
-
       {loading ? (
         <div className='loading'>Loading...</div>
+      ) : error ? (
+        <div className='error'>{error}</div>
       ) : (
         <div className='cards'>
-          {data.map((item: CardProps) => (
+          {data.map((item: CardType) => (
             <Card {...item} key={item.imdbID} />
           ))}
         </div>

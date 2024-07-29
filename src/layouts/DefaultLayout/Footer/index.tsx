@@ -1,7 +1,17 @@
+import './footer.styl'
+
 const Footer = () => {
   return (
     <>
-      <h3>Footer</h3>
+      <footer className='footer'>
+        <div className='footer__container'>
+          <div className='footer__content'>
+            <p className='footer__text'>
+              © Alisa Miller @ {new Date().getFullYear()}
+            </p>
+          </div>
+        </div>
+      </footer>
     </>
   )
 }

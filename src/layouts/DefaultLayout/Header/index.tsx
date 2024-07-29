@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom'
-
+import './header.styl'
+import Search from '@cmp/Search/index'
 const Header = () => {
   return (
     <>
-
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
+      <header className='header'>
+        <nav className='nav'>
+          <ul className='nav__list'>
+            <li className='nav__item'>
+              <Link className='nav__link' to='/'>
+                Home
+              </Link>
             </li>
           </ul>
+          <Search />
         </nav>
       </header>
     </>

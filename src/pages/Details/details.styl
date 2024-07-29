@@ -2,29 +2,75 @@
   background-color rgba(120, 224, 255, 0.12)
   padding 2rem
   box-shadow 0 0 2rem rgba(0, 0, 0, 0.2)
-  text-align center
-  
+  max-width 90vw
+  margin 0 auto
+
+.header-2
+  font-size 2rem
+
 .details
   display flex
-  flex-flow column nowrap 
-  align-items: center
+  flex-flow column nowrap
+  align-items center
+  padding 0 3rem
+
   img
     width fit-content
 
+.properties
+  display flex
+  flex-flow row-reverse nowrap
+  justify-content space-between
+  width 100%
+  gap 3rem
+
+.stats
+  align-self start
+  width 100%
+  gap 1rem
+  display flex
+  flex-flow column nowrap
+
 .tags
-  display inline-flex
+  display flex
+  flex-flow column wrap
+  gap 1rem
 
 .tag
-  background-color rgba(120, 224, 255, 0.12)
+  background-color #78E0FF
   padding 0.5rem 1rem
-  margin 0 0.5rem
   border-radius 0.5rem
-  box-shadow 0 0 2rem rgba(0, 0, 0, 0.2)
+  box-shadow 0 0 2rem #00000020
   font-size 1.2rem
   font-weight 500
-  color rgba(0, 0, 0, 0.8)
-  text-transform uppercase
-  &:hover
-    background-color rgba(120, 224, 255, 0.2)
-    box-shadow 0 0 2rem rgba(0, 0, 0, 0.4)
+  color #3333
+  text-transform capitalize
+  flex-shrink 1
+  flex-grow 0
+  height fit-content
+  transition all 0.5s
 
+  &:hover
+    background-color #78E0FF
+    box-shadow 0 0 2rem #00000020
+
+.text
+  font-size 1.5rem
+  font-weight 500
+  color #333
+
+.ratings
+  display flex
+  flex-flow column nowrap
+  gap 1rem
+  justify-content start
+  align-items start
+  margin 0
+  padding 0
+
+  .rating
+    list-style-type square
+    font-size 1.2rem
+    display flex
+    flex-flow row nowrap
+    gap 0.5rem
