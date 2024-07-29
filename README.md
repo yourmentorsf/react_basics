@@ -4,7 +4,7 @@
 
 Пример проекта можно посмотреть по ссылке:
 
-[GH Pages](https://yourmentorsf.github.io)
+[GH Pages](https://yourmentorsf.github.io/react_basics)
 
 ---
 

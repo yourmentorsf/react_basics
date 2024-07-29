@@ -14,7 +14,7 @@ import DefaultLayout from './layouts/DefaultLayout'
 const root = document.getElementById('root')! 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/react_basics'>
       <DefaultLayout>
         <Routes>
           <Route path='/' element={<Main />} />
