@@ -4,9 +4,7 @@
 
 Пример проекта можно посмотреть по ссылке:
 
-1. [VERCEL](https://react-basics-p9f4bb4kz-yourmentorsfs-projects.vercel.app/)
-
-2. [GH Pages](https://yourmentorsf.github.io/react_basics/)
+[GH Pages](https://yourmentorsf.github.io)
 
 ---
 
