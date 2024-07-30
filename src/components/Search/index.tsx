@@ -22,9 +22,9 @@ const Search = () => {
   return (
     <>
       <form method='post' className='search-form' onSubmit={searchHandler}>
-        <input type='text' name='search' id='search' placeholder='Search' />
+        <input type='text' name='search' id='search' placeholder='Search Movies by Title' />
         <button type='submit' className='btn'>
-          Search Movies by Title
+          Search
         </button>
       </form>
     </>

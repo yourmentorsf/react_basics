@@ -1,9 +1,24 @@
+.home
+  padding .5rem
+  color:#f4f4f4
+  background-color:#007bff
+  border-radius:0.5rem
+  text-decoration: none
+  margin 1rem 0
+  align-self center
+  display none
+  &:hover
+    background-color:#0056b3
+
 .description
   background-color rgba(120, 224, 255, 0.12)
   padding 2rem
   box-shadow 0 0 2rem rgba(0, 0, 0, 0.2)
   max-width 90vw
   margin 0 auto
+  display flex
+  flex-flow column nowrap
+  gap 1rem
 
 .header-2
   font-size 2rem
@@ -23,6 +38,23 @@
   justify-content space-between
   width 100%
   gap 3rem
+
+@media screen and (max-width 768px)
+  .description
+    padding 0
+  .home
+    display block
+  .properties
+    flex-flow column nowrap
+    gap 1rem
+  
+  .details
+    img
+      width 100%
+
+    .text
+      font-size 1.2rem
+      text-align center
 
 .stats
   align-self start

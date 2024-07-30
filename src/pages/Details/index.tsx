@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import './details.styl'
 import { DetailsType, RatingType } from '@tps/index'
 import { useApiUrl } from '@hks/index'
@@ -23,6 +23,7 @@ const Details = () => {
 
   return (
     <article className='description'>
+      <NavLink to='/' className='home'>Home</NavLink>
       {loading ? (
         <div className='loading'>Loading...</div>
       ) : (
